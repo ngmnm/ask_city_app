@@ -39,6 +39,8 @@ dependencies:
 #  firebase_core: ^1.14.1
 
   font_awesome_flutter: ^10.1.0
+  material_design_icons_flutter: ^5.0.6595
+
 
 
 

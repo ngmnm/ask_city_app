@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Ask Cit App',
-      home: HomeScreen(),
+      // home: HomeScreen(),
       getPages: AppPages.routes,
+      initialRoute: AppPages.initial,
     );
   }
 }

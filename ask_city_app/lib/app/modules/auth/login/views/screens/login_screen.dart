@@ -48,7 +48,9 @@ class LoginScreen extends GetView<LoginController> {
                         _LoginButton(),
                         SizedBox(height: 33),
                         RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            controller.goToRegistrationScreen();
+                          },
                           child: Text(
                             "الدخول كزائر",
                             style: TextStyle(

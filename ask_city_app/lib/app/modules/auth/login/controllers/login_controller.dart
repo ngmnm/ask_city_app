@@ -25,6 +25,8 @@ class LoginController extends GetxController with StateMixin<dynamic> {
   void goToHomeScreen() {
     Get.offNamed(Routes.home);
   }
+
+
   //
   // void login(
   //     {required String email,

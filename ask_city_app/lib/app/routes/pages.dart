@@ -12,7 +12,7 @@ import 'package:get/get.dart';
 part 'routes.dart';
 
 abstract class AppPages {
-  static const initial = Routes.home;
+  static const initial = Routes.splash;
 
   static final routes = [
     GetPage(

@@ -9,13 +9,13 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // _initialize();
+    _initialize();
     return Scaffold(
       body: Center(
         child: SizedBox(
           width: Get.width * 0.5,
           child: const CircleAvatar(
-            radius: 15,
+            radius: 50,
             child: Text('logo'),
           ),
         ),
@@ -23,14 +23,9 @@ class SplashScreen extends StatelessWidget {
     );
   }
 
-  // void _initialize() {
-  //   Firebase.initializeApp().then((value) async {
-  //     await Future.delayed(Duration(seconds: 1));
-  //     if (FirebaseAuth.instance.currentUser != null) {
-  //       Get.offNamed(Routes.home);
-  //     } else {
-  //       Get.offNamed(Routes.login);
-  //     }
-  //   });
-  // }
+  void _initialize() async {
+    await Future.delayed(Duration(seconds: 1));
+
+    Get.offNamed(Routes.home);
+  }
 }
