@@ -7,9 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:share/share.dart';
 
 part '../components/search_bar.dart';
 part '../components/question_component.dart';
+part '../components/share_button.dart';
 
 class HomeScreen extends GetView<HomeController> {
   const HomeScreen({Key? key}) : super(key: key);
@@ -163,6 +165,8 @@ class HomeScreen extends GetView<HomeController> {
                                     "Where do I find the best thobe tailor in Khobar?",
                                 answerCount: 2,
                                 categoryName: "Other",
+                                questionId: 3,
+                                cityName: "khobar",
                               ),
                             ),
                             Container(

@@ -4,12 +4,16 @@ class QuestionComponent extends StatelessWidget {
   String questionText;
   int answerCount;
   String categoryName;
+  String cityName;
+  int questionId;
 
   QuestionComponent(
       {Key? key,
       required this.questionText,
       required this.answerCount,
-      required this.categoryName})
+      required this.categoryName,
+      required this.cityName,
+      required this.questionId})
       : super(key: key);
 
   @override
@@ -49,10 +53,10 @@ class QuestionComponent extends StatelessWidget {
                         SizedBox(
                           width: 15,
                         ),
-                        Icon(
-                          FontAwesomeIcons.shareNodes,
-                          color: Colors.black54,
-                          size: 20,
+                        ShareButtonComponent(
+                          questionText: questionText,
+                          cityName: cityName,
+                          questionId: questionId,
                         ),
                       ],
                     ),
