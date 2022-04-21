@@ -22,7 +22,7 @@ class _Header extends GetView<LoginController> {
             ))),
             child: Text(
               'تسجيل ',
-              style: GoogleFonts.almarai(
+              style: TextStyle(
                 color: Color(0xFFAAAAAA),
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class _Header extends GetView<LoginController> {
           ))),
           child: Text(
             'تسجيل الدخول',
-            style: GoogleFonts.almarai(
+            style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),

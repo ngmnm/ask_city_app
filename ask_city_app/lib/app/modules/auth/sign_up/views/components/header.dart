@@ -1,6 +1,6 @@
-part of register;
+part of sign_up;
 
-class _Header extends GetView<RegistrationController> {
+class _Header extends StatelessWidget {
   const _Header({Key? key}) : super(key: key);
 
   @override
@@ -21,29 +21,26 @@ class _Header extends GetView<RegistrationController> {
           child: Text(
             'التسجيل ',
             style:
-                GoogleFonts.almarai(fontSize: 18, fontWeight: FontWeight.bold),
+            TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ),
-        GestureDetector(
-          onTap: () => controller.goToLoginScreen(),
-          child: Container(
-            padding: EdgeInsets.only(
-              bottom: 4, // Space between underline and text
-            ),
-            decoration: BoxDecoration(
-                border: Border(
-                    bottom: BorderSide(
+        Container(
+          padding: EdgeInsets.only(
+            bottom: 4, // Space between underline and text
+          ),
+          decoration: BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(
+            color: Color(0xFFAAAAAA),
+            width: 2.0,
+            // Underline thickness
+          ))),
+          child: Text(
+            'تسجيل الدخول',
+            style: TextStyle(
               color: Color(0xFFAAAAAA),
-              width: 2.0,
-              // Underline thickness
-            ))),
-            child: Text(
-              'تسجيل الدخول',
-              style: GoogleFonts.almarai(
-                color: Color(0xFFAAAAAA),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

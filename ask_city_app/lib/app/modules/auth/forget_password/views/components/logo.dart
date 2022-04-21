@@ -10,10 +10,7 @@ class _HeaderLogo extends StatelessWidget {
       child: SizedBox(
         width: Get.width * 0.2,
         height: Get.width * 0.2,
-        child: SvgPicture.asset(
-          ImageConstant.logo,
-          fit: BoxFit.fitWidth,
-        ),
+        child: Text('logo'),
       ),
     );
   }

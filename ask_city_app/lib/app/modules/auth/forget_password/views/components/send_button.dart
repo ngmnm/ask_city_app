@@ -12,12 +12,12 @@ class _SendButton extends GetView<ForgetPasswordController> {
             borderRadius: BorderRadius.circular(10), color: Color(0xFFFFB300)),
         child: TextButton(
           onPressed: () {
-            controller.resetPassword(controller.email.text);
+            // controller.resetPassword(controller.email.text);
             // controller.goToLoginScreen();
           },
           child: Text(
             "تقديم",
-            style: GoogleFonts.almarai(
+            style: TextStyle(
                 color: Color(0xFFFFFFFF),
                 fontSize: 16,
                 fontWeight: FontWeight.bold),

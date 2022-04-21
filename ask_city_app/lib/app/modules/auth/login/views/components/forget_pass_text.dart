@@ -14,7 +14,7 @@ class _ForgetPassText extends GetView<LoginController> {
             padding: const EdgeInsets.only(left: 40),
             child: Text(
               "نسيت كلمة المرور؟",
-              style: GoogleFonts.almarai(
+              style: TextStyle(
                 fontSize: 13,
                 color: Color(0xFFAAAAAA),
               ),

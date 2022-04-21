@@ -14,13 +14,10 @@ class _SearchBar extends GetView<HomeController> {
             width: 56,
             height: 45,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(10),
-                  bottomRight: Radius.circular(10)),
-              color: controller.player.value == true
-                  ? controller.playerTheme
-                  : controller.teamTheme,
-            ),
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(10),
+                    bottomRight: Radius.circular(10)),
+                color: Colors.black12),
             child: TextButton(
               onPressed: () {},
               child: Icon(Icons.search, size: 14, color: Color(0xFFF7F7F7)),
@@ -37,14 +34,14 @@ class _SearchBar extends GetView<HomeController> {
             child: TextField(
                 textDirection: TextDirection.rtl,
                 textCapitalization: TextCapitalization.words,
-                style: GoogleFonts.almarai(
+                style: TextStyle(
                   color: Color(0xFF000000),
                 ),
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.only(right: 14.0, bottom: 5),
                     hintText: "بحث...",
-                    hintStyle: GoogleFonts.almarai(
+                    hintStyle: TextStyle(
                       fontSize: 10,
                       color: Color(0xFFC0C0C0),
                       fontWeight: FontWeight.normal,

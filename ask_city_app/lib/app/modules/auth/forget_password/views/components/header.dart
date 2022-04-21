@@ -23,7 +23,7 @@ class _Header extends StatelessWidget {
               Container(
                 child: Text(
                   'نسيت كلمة المرور؟',
-                  style: GoogleFonts.almarai(
+                  style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -40,7 +40,7 @@ class _Header extends StatelessWidget {
               Container(
                 child: Text(
                   'أدخل بريدك الإلكتروني وسنرسل لك رابطًا ',
-                  style: GoogleFonts.almarai(
+                  style: TextStyle(
                     fontSize: 13,
                     color: Color(0xFFAAAAAA),
                   ),
@@ -49,7 +49,7 @@ class _Header extends StatelessWidget {
               Container(
                 child: Text(
                   ' لإعادة تعيين كلمة المرور',
-                  style: GoogleFonts.almarai(
+                  style: TextStyle(
                     fontSize: 13,
                     color: Color(0xFFAAAAAA),
                   ),

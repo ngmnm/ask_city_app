@@ -7,22 +7,20 @@ class _InputField extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomTextFieldIcon(
+        CustomTextField(
           inputType: TextInputType.emailAddress,
           obscureText: false,
-          icon: Icons.email,
           inputAction: TextInputAction.next,
           hint: 'البريد الإلكتروني',
-          contoller: controller.email,
+          controller: controller.email,
         ),
         SizedBox(height: 13),
-        CustomTextFieldIcon(
+        CustomTextField(
           inputType: TextInputType.visiblePassword,
           obscureText: true,
-          icon: Icons.password,
           inputAction: TextInputAction.go,
           hint: 'كلمة المرور',
-          contoller: controller.password,
+          controller: controller.password,
         ),
       ],
     );

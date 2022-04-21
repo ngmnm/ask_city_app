@@ -1,16 +1,14 @@
 library forget_password_view;
 
+import 'package:ask_city_app/app/modules/auth/forget_password/controllers/forget_password_controller.dart';
+import 'package:ask_city_app/app/widgets/Custom_input_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:hawary/app/constants/assets_constant.dart';
-import 'package:hawary/app/features/forget_password/controllers/forget_password_controller.dart';
 import 'package:get/get.dart';
-import 'package:hawary/app/utils/widgets/custom_input_field.dart';
+
 
 part '../components/send_button.dart';
 part '../components/header.dart';

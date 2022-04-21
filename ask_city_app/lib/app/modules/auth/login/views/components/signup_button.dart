@@ -19,7 +19,7 @@ class _SignUpButton extends GetView<LoginController> {
         ))),
         child: Text(
           'تسجيل ',
-          style: GoogleFonts.almarai(
+          style: TextStyle(
             color: Color(0xFFAAAAAA),
             fontSize: 18,
             fontWeight: FontWeight.bold,
