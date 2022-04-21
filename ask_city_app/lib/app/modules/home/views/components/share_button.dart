@@ -21,8 +21,12 @@ class ShareButtonComponent extends StatelessWidget {
             .replaceAll(RegExp(r"[\W\g]+"), '-') +
         '-';
     cityName = cityName.toLowerCase();
-    String shareContent =
-        'https://askcity.co/$cityName/question/$questionForURL$questionId';
+    String shareURL = '$cityName/question/$questionForURL$questionId';
+    final shareContent = Uri(
+      scheme: 'https',
+      host: 'askcity.co',
+      path: shareURL,
+    );
     return Container(
       child: Row(
         children: [
@@ -34,7 +38,7 @@ class ShareButtonComponent extends StatelessWidget {
               size: 20,
             ),
             onPressed: () {
-              Share.share(shareContent);
+              Share.share(shareContent.toString());
             },
           ),
         ],
