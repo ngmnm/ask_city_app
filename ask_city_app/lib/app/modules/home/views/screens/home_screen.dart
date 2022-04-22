@@ -27,25 +27,25 @@ class HomeScreen extends GetView<HomeController> {
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.settings_outlined),
+                icon: Icon(Icons.home_outlined),
                 label: 'الرئيسية',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined),
+                icon: Icon(FontAwesomeIcons.fireFlameSimple),
                 label: 'الاسئلة الشائعة',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.shield_outlined),
+                icon: Icon(Icons.notifications_none_rounded),
                 label: 'الاشعارات',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline),
+                icon: Icon(Icons.bookmark_border),
                 label: 'المفضلة',
               ),
             ],
             currentIndex: controller.tabIndex,
-            selectedItemColor: Color(0xFFFEB500),
-            unselectedItemColor: Colors.deepPurple,
+            selectedItemColor: Color(0xFF864ADB),
+            unselectedItemColor: Color(0xFF837D7D),
             showSelectedLabels: true,
             showUnselectedLabels: true,
             iconSize: 21,
@@ -164,22 +164,50 @@ class HomeScreen extends GetView<HomeController> {
                                 questionText:
                                     "Where do I find the best thobe tailor in Khobar?",
                                 answerCount: 2,
-                                categoryName: "Other",
+                                categoryName: "main",
                                 questionId: 3,
                                 cityName: "khobar",
                               ),
                             ),
                             Container(
-                              child: Center(child: Text("test")),
+                              child: QuestionComponent(
+                                questionText:
+                                    "Where do I find the best thobe tailor in Khobar?",
+                                answerCount: 2,
+                                categoryName: "coffee-shops",
+                                questionId: 3,
+                                cityName: "khobar",
+                              ),
                             ),
                             Container(
-                              child: Center(child: Text("test")),
+                              child: QuestionComponent(
+                                questionText:
+                                    "Where do I find the best thobe tailor in Khobar?",
+                                answerCount: 2,
+                                categoryName: "restaurants",
+                                questionId: 3,
+                                cityName: "khobar",
+                              ),
                             ),
                             Container(
-                              child: Center(child: Text("test")),
+                              child: QuestionComponent(
+                                questionText:
+                                    "Where do I find the best thobe tailor in Khobar?",
+                                answerCount: 2,
+                                categoryName: "shops",
+                                questionId: 3,
+                                cityName: "khobar",
+                              ),
                             ),
                             Container(
-                              child: Center(child: Text("test")),
+                              child: QuestionComponent(
+                                questionText:
+                                    "Where do I find the best thobe tailor in Khobar?",
+                                answerCount: 2,
+                                categoryName: "Other",
+                                questionId: 3,
+                                cityName: "khobar",
+                              ),
                             ),
                           ],
                         ),
