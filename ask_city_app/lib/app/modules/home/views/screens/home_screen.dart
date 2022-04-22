@@ -152,22 +152,40 @@ class HomeScreen extends GetView<HomeController> {
                         ),
                       ),
                       Container(
-                        height: 400, //height of TabBarView
+                        height: Get.height * 0.65,
                         decoration: BoxDecoration(
                             border: Border(
                                 top: BorderSide(
                                     color: Color(0xFF474F59), width: 0.5))),
                         child: TabBarView(
                           children: <Widget>[
-                            Container(
-                              child: QuestionComponent(
-                                questionText:
-                                    "Where do I find the best thobe tailor in Khobar?",
-                                answerCount: 2,
-                                categoryName: "main",
-                                questionId: 3,
-                                cityName: "khobar",
-                              ),
+                            ListView(
+                              children: [
+                                QuestionComponent(
+                                  questionText:
+                                      "Where do I find the best thobe tailor in Khobar?",
+                                  answerCount: 2,
+                                  categoryName: "main",
+                                  questionId: 3,
+                                  cityName: "khobar",
+                                ),
+                                QuestionComponent(
+                                  questionText:
+                                      "Where do I find the best thobe tailor in Khobar?",
+                                  answerCount: 2,
+                                  categoryName: "main",
+                                  questionId: 3,
+                                  cityName: "khobar",
+                                ),
+                                QuestionComponent(
+                                  questionText:
+                                      "Where do I find the best thobe tailor in Khobar?",
+                                  answerCount: 2,
+                                  categoryName: "main",
+                                  questionId: 3,
+                                  cityName: "khobar",
+                                ),
+                              ],
                             ),
                             Container(
                               child: QuestionComponent(
