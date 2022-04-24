@@ -7,10 +7,10 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../../../widgets/custom_submit_button.dart';
-import '../../controllers/question_controller.dart';
+import '../../controllers/ask_question_controller.dart';
 
-class QuestionScreen extends GetView<QuestionController> {
-  const QuestionScreen({Key? key}) : super(key: key);
+class AskQuestionScreen extends GetView<AskQuestionController> {
+  const AskQuestionScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
