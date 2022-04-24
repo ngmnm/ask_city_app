@@ -9,6 +9,9 @@ import 'package:ask_city_app/app/modules/home/views/screens/home_screen.dart';
 import 'package:ask_city_app/app/modules/splash/splash_screen.dart';
 import 'package:get/get.dart';
 
+import '../modules/question/bindings/question_binding.dart';
+import '../modules/question/views/screens/question_screen.dart';
+
 part 'routes.dart';
 
 abstract class AppPages {
@@ -42,6 +45,12 @@ abstract class AppPages {
       page: () => HomeScreen(),
       transition: Transition.cupertino,
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.question,
+      page: () => QuestionScreen(),
+      transition: Transition.cupertino,
+      binding: QuestionBinding(),
     ),
   ];
 }

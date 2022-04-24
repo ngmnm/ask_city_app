@@ -10,7 +10,6 @@ class SelectCategoryCard extends StatelessWidget {
   });
 
   final String category;
-
   final VoidCallback action;
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class SelectCategoryCard extends StatelessWidget {
             color: Color(0x7C493300).withOpacity(0.5),
             spreadRadius: 2,
             blurRadius: 7,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: Offset(0, 3),
           ),
         ], borderRadius: BorderRadius.circular(20), color: Colors.white),
         child: Center(

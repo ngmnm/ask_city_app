@@ -1,4 +1,4 @@
-part of home_view;
+part of question_view;
 
 class _AskQuestionCategoryDialog extends GetView<HomeController> {
   const _AskQuestionCategoryDialog({Key? key}) : super(key: key);
@@ -28,18 +28,11 @@ class _AskQuestionCategoryDialog extends GetView<HomeController> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SelectCategoryCard(
-                        action: () {
-                          controller.category.value = "coffee shops";
-                          controller.goToQuestionPage();
-                        },
+                        action: () {},
                         category: 'coffee shops',
                       ),
                       SelectCategoryCard(
-                        action: () {
-                          print('sdf');
-                          controller.category.value = "restaurants";
-                          controller.goToQuestionPage();
-                        },
+                        action: () {},
                         category: 'restaurants',
                       ),
                     ],
@@ -49,17 +42,11 @@ class _AskQuestionCategoryDialog extends GetView<HomeController> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SelectCategoryCard(
-                        action: () {
-                          controller.category.value = "shops";
-                          controller.goToQuestionPage();
-                        },
+                        action: () {},
                         category: 'shops',
                       ),
                       SelectCategoryCard(
-                        action: () {
-                          controller.category.value = "other";
-                          controller.goToQuestionPage();
-                        },
+                        action: () {},
                         category: 'other',
                       ),
                     ],
