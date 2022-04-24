@@ -2,6 +2,8 @@
 
 library home_view;
 
+import 'dart:ui';
+
 import 'package:ask_city_app/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -9,9 +11,12 @@ import 'package:get/get.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:share/share.dart';
 
+import '../components/select_category_card.dart';
+
 part '../components/search_bar.dart';
 part '../components/question_component.dart';
 part '../components/share_button.dart';
+part '../components/add_question_category_dialog.dart';
 
 class HomeScreen extends GetView<HomeController> {
   const HomeScreen({Key? key}) : super(key: key);
@@ -23,6 +28,17 @@ class HomeScreen extends GetView<HomeController> {
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Color(0xFF864ADB),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: ((BuildContext context) {
+                    return _AskQuestionCategoryDialog();
+                  }));
+            },
+            backgroundColor: Theme.of(context).primaryColor,
+            child: Icon(FontAwesomeIcons.plus),
           ),
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[

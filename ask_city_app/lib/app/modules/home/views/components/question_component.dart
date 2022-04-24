@@ -25,7 +25,6 @@ class QuestionComponent extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(11, 8, 11, 0),
           margin: const EdgeInsets.fromLTRB(0, 5, 0, 5),
           width: Get.width * 0.8,
-          // color: Colors.white,
           height: Get.height * 0.25,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10), color: Colors.black12),

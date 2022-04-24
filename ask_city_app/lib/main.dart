@@ -16,6 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Ask Cit App',
+      theme: ThemeData(
+        // Define the default brightness and colors.
+        // brightness: Brightness.dark,
+        primaryColor:  Color(0xFF864ADB),
+      ),
       // home: HomeScreen(),
       getPages: AppPages.routes,
       initialRoute: AppPages.initial,
