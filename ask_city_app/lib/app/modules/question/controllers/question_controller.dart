@@ -7,14 +7,10 @@ import 'package:get/get.dart';
 class QuestionController extends GetxController with StateMixin<List<dynamic>> {
   var category = Get.arguments;
 
-  var charCount = 200.obs;
+  var charCount = 0.obs;
   TextEditingController question = TextEditingController();
 
   void goToMain() {
     Get.offAllNamed(Routes.home);
-  }
-
-  void UpdateCharConter(String value) {
-    charCount.value = value.length;
   }
 }
