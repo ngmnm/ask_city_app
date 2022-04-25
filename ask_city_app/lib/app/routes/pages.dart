@@ -11,7 +11,8 @@ import 'package:get/get.dart';
 
 import '../modules/ask_question/bindings/question_binding.dart';
 import '../modules/ask_question/views/screens/question_screen.dart';
-
+import '../modules/question/bindings/question_binding.dart';
+import '../modules/question/views/screens/question_screen.dart';
 
 part 'routes.dart';
 
@@ -52,6 +53,12 @@ abstract class AppPages {
       page: () => AskQuestionScreen(),
       transition: Transition.cupertino,
       binding: AskQuestionBinding(),
+    ),
+    GetPage(
+      name: _Paths.question,
+      page: () => QuestionScreen(),
+      transition: Transition.cupertino,
+      binding: QuestionBinding(),
     ),
   ];
 }

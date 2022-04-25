@@ -1,4 +1,8 @@
-part of home_view;
+import 'package:ask_city_app/app/routes/pages.dart';
+import 'package:ask_city_app/app/widgets/share_button.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class QuestionComponent extends StatelessWidget {
   String questionText;
@@ -69,7 +73,12 @@ class QuestionComponent extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Text(questionText),
+                  InkWell(
+                    onTap: () {
+                      Get.offAllNamed(Routes.question);
+                    },
+                    child: Text(questionText),
+                  ),
                 ],
               ),
               Row(
