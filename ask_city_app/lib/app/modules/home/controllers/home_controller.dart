@@ -23,4 +23,5 @@ class HomeController extends GetxController with StateMixin<List<dynamic>> {
   void goToLoginPage() {
     Get.toNamed(Routes.login);
   }
+
 }

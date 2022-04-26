@@ -4,7 +4,9 @@ library home_view;
 
 import 'dart:ui';
 
+import 'package:ask_city_app/app/modules/auth/login/controllers/login_controller.dart';
 import 'package:ask_city_app/app/modules/home/controllers/home_controller.dart';
+import 'package:ask_city_app/app/widgets/custom_submit_button.dart';
 import 'package:ask_city_app/app/widgets/question_component.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,6 +15,7 @@ import '../components/select_category_card.dart';
 
 part '../components/search_bar.dart';
 part '../components/add_question_category_dialog.dart';
+part '../components/logout_dialog.dart';
 
 class HomeScreen extends GetView<HomeController> {
   const HomeScreen({Key? key}) : super(key: key);
@@ -93,10 +96,19 @@ class HomeScreen extends GetView<HomeController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      FontAwesomeIcons.solidUserCircle,
-                      color: Colors.black54,
-                      size: 30,
+                    GestureDetector(
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: ((BuildContext context) {
+                              return _LogoutDialog();
+                            }));
+                      },
+                      child: Icon(
+                        FontAwesomeIcons.solidUserCircle,
+                        color: Colors.black54,
+                        size: 30,
+                      ),
                     ),
                     Container(
                       width: Get.width * 0.7,
@@ -125,7 +137,7 @@ class HomeScreen extends GetView<HomeController> {
                           textInputAction: TextInputAction.search),
                     ),
                     GestureDetector(
-                      onTap: (()=> controller.goToLoginPage()),
+                      onTap: (() => controller.goToLoginPage()),
                       child: Icon(
                         FontAwesomeIcons.cog,
                         color: Colors.black54,
