@@ -19,4 +19,8 @@ class HomeController extends GetxController with StateMixin<List<dynamic>> {
   void goToQuestionPage() {
     Get.toNamed(Routes.ask_question, arguments: category.value);
   }
+
+  void goToLoginPage() {
+    Get.toNamed(Routes.login);
+  }
 }

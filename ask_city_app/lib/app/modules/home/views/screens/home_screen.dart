@@ -124,10 +124,13 @@ class HomeScreen extends GetView<HomeController> {
                               hintTextDirection: TextDirection.rtl),
                           textInputAction: TextInputAction.search),
                     ),
-                    Icon(
-                      FontAwesomeIcons.cog,
-                      color: Colors.black54,
-                      size: 30,
+                    GestureDetector(
+                      onTap: (()=> controller.goToLoginPage()),
+                      child: Icon(
+                        FontAwesomeIcons.cog,
+                        color: Colors.black54,
+                        size: 30,
+                      ),
                     ),
                   ],
                 ),

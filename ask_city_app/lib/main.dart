@@ -4,10 +4,11 @@ import 'package:ask_city_app/app/routes/pages.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // Define the default brightness and colors.
         // brightness: Brightness.dark,
-        primaryColor:  Color(0xFF864ADB),
+        primaryColor: Color(0xFF864ADB),
+        accentColor: Colors.white54
       ),
       // home: HomeScreen(),
       getPages: AppPages.routes,

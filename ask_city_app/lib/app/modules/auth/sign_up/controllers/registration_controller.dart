@@ -37,6 +37,10 @@ class SignUpController extends GetxController with StateMixin<dynamic> {
   void goToLoginScreen() {
     Get.offNamed(Routes.login);
   }
+
+  void goToHomeScreen() {
+    Get.offNamed(Routes.home);
+  }
 }
 // FirebaseAuth _auth = FirebaseAuth.instance;
 
