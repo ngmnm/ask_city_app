@@ -11,20 +11,23 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     _initialize();
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: SizedBox(
           width: Get.width * 0.5,
           child: const CircleAvatar(
-            radius: 50,
-            child: Text('logo'),
+            radius: 260,
+            child: Image(image: AssetImage('assets/images/logo.png'))
+
+            ),
           ),
         ),
-      ),
-    );
+      );
+
   }
 
   void _initialize() async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(Duration(seconds: 2));
 
     Get.offNamed(Routes.home);
   }
