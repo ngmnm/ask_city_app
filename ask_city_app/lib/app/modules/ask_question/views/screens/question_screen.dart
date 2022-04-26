@@ -58,6 +58,7 @@ class AskQuestionScreen extends GetView<AskQuestionController> {
               ),
               Center(
                   child: CustomSubmitButton(
+                      color: Theme.of(context).primaryColor,
                       action: () {
                         controller.goToMain();
                       },

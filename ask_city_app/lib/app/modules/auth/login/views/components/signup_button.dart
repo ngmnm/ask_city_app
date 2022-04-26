@@ -5,25 +5,24 @@ class _SignUpButton extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => controller.goToRegistrationScreen(),
-      child: Container(
-        padding: EdgeInsets.only(
-          bottom: 4, // Space between underline and text
-        ),
-        decoration: BoxDecoration(
-            border: Border(
-                bottom: BorderSide(
-          color: Color(0xFFAAAAAA),
-          width: 2.0, // Underline thickness
-        ))),
-        child: Text(
-          'تسجيل ',
-          style: TextStyle(
-            color: Color(0xFFAAAAAA),
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+    return Container(
+      margin: EdgeInsets.fromLTRB(10, 20, 10, 20),
+      //child: Text('Don\'t have an account? Create'),
+      child: Text.rich(
+        TextSpan(
+          children: [
+            TextSpan(text: "Don\'t have an account? "),
+            TextSpan(
+              text: 'Create',
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  controller.goToRegistrationScreen();
+                },
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).primaryColor),
+            ),
+          ],
         ),
       ),
     );

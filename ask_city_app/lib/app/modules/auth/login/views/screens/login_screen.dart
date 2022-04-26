@@ -53,85 +53,11 @@ class LoginScreen extends GetView<LoginController> {
                     Form(
                       child: Column(
                         children: [
-                          Container(
-                            alignment: Alignment.center,
-                            child: TextField(
-                              textInputAction: TextInputAction.next,
-                              decoration: ThemeHelper().textInputDecoration(
-                                  'User Name', 'Enter your user name'),
-                            ),
-                            decoration:
-                                ThemeHelper().inputBoxDecorationShaddow(),
-                          ),
-                          SizedBox(height: 30.0),
-                          Container(
-                            alignment: Alignment.center,
-                            decoration:
-                                ThemeHelper().inputBoxDecorationShaddow(),
-                            child: TextField(
-                              obscureText: true,
-                              textInputAction: TextInputAction.go,
-                              decoration: ThemeHelper().textInputDecoration(
-                                  'Password', 'Enter your password'),
-                            ),
-                          ),
+                          _InputField(),
                           SizedBox(height: 15.0),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(10, 0, 10, 20),
-                            alignment: Alignment.topRight,
-                            child: GestureDetector(
-                              onTap: () {
-                                controller.goToForgetPasswordScreen();
-                              },
-                              child: Text(
-                                "Forgot your password?",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            decoration:
-                                ThemeHelper().buttonBoxDecoration(context),
-                            child: ElevatedButton(
-                              style: ThemeHelper().buttonStyle(),
-                              child: Padding(
-                                padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
-                                child: Text(
-                                  'Sign In'.toUpperCase(),
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
-                              ),
-                              onPressed: () {
-                                controller.goToHomeScreen();
-                              },
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(10, 20, 10, 20),
-                            //child: Text('Don\'t have an account? Create'),
-                            child: Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(text: "Don\'t have an account? "),
-                                  TextSpan(
-                                    text: 'Create',
-                                    recognizer: TapGestureRecognizer()
-                                      ..onTap = () {
-                                        controller.goToRegistrationScreen();
-                                      },
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Theme.of(context).primaryColor),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                          _ForgetPassText(),
+                          _LoginButton(),
+                          _SignUpButton(),
                         ],
                       ),
                     ),

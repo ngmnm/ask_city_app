@@ -4,12 +4,13 @@ import 'package:get/get_core/src/get_main.dart';
 
 // ignore: must_be_immutable
 class CustomSubmitButton extends StatelessWidget {
-  CustomSubmitButton({
-    required this.hint, required this.action,
-  });
+  CustomSubmitButton(
+      {required this.hint, required this.action, required this.color});
 
   final String hint;
   final VoidCallback action;
+  final Color color;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +18,7 @@ class CustomSubmitButton extends StatelessWidget {
         width: Get.width * 0.35,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Theme.of(context).primaryColor),
+            color: color),
         child: TextButton(
             onPressed: action,
             child: Text(

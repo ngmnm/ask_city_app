@@ -5,22 +5,19 @@ class _ForgetPassText extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => controller.goToForgetPasswordScreen(),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 40),
-            child: Text(
-              "نسيت كلمة المرور؟",
-              style: TextStyle(
-                fontSize: 13,
-                color: Color(0xFFAAAAAA),
-              ),
-            ),
-          )
-        ],
+    return   Container(
+      margin: EdgeInsets.fromLTRB(10, 0, 10, 20),
+      alignment: Alignment.topRight,
+      child: GestureDetector(
+        onTap: () {
+          controller.goToForgetPasswordScreen();
+        },
+        child: Text(
+          "Forgot your password?",
+          style: TextStyle(
+            color: Colors.grey,
+          ),
+        ),
       ),
     );
   }
