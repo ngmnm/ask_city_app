@@ -2,6 +2,7 @@ library question_view;
 
 import 'dart:ui';
 import 'package:ask_city_app/app/modules/home/controllers/home_controller.dart';
+import 'package:ask_city_app/app/widgets/answer_widget.dart';
 import 'package:ask_city_app/app/widgets/question_component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -78,6 +79,14 @@ class QuestionScreen extends GetView<QuestionController> {
                         ],
                       ),
                     ),
+                  ),
+                  AnswerWidget(
+                    answerId: 1,
+                    answerText: 'this is my answer',
+                    cityName: 'khobar',
+                    questionId: 1,
+                    userFullName: 'Waleed Alfaifi',
+                    voteCount: 5,
                   ),
                 ],
               ),
