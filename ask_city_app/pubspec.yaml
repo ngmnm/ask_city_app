@@ -41,6 +41,8 @@ dependencies:
   material_design_icons_flutter: ^5.0.6595
   share: ^2.0.4
   firebase_core: ^1.15.0
+  google_sign_in: ^5.3.0
+
 
 
 

@@ -75,7 +75,7 @@ class QuestionComponent extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.offAllNamed(Routes.question);
+                      Get.toNamed(Routes.question);
                     },
                     child: Text(questionText),
                   ),

@@ -1,7 +1,6 @@
-import 'dart:async';
 
 import 'package:ask_city_app/app/routes/pages.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,19 +10,17 @@ import 'package:get/get.dart';
 class SignUpController extends GetxController with StateMixin<dynamic> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  late String phoneNo, smsCode;
   String verificationId = '';
   bool codeSent = false;
 
   String userId = '';
 
-  // late User existingUser;
+  late User existingUser;
 
-  String userName = "";
-  String userEmail = "";
-  String userMobile = "";
-  String userPass = "";
-  String userRePass = "";
+  final firstName = TextEditingController();
+  final lastName = TextEditingController();
+  final email = TextEditingController();
+  final password = TextEditingController();
 
   final isLoading = false.obs;
 
@@ -41,57 +38,49 @@ class SignUpController extends GetxController with StateMixin<dynamic> {
   void goToHomeScreen() {
     Get.offNamed(Routes.home);
   }
+
+  FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Rxn<User> _firebaseUser = Rxn<User>();
+
+  String? get user => _firebaseUser.value?.email;
+
+  @override
+  void onInit() {
+    _firebaseUser = Rxn<User>(_auth.currentUser);
+    _firebaseUser.bindStream(_auth.authStateChanges());
+  }
+
+  void createUser(
+      String firstName, String lastName, String email, String password) async {
+    try {
+      isLoading.value = true;
+      await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+
+      final User user = _auth.currentUser!;
+      user.getIdToken();
+      final uid = user.uid;
+      print(uid);
+      isLoading.value = false;
+
+      goToHomeScreen();
+    } on FirebaseAuthException catch (e) {
+      String message = e.message.toString();
+      Get.snackbar(
+        "Error creating Account",
+        message,
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Color(0xFF864ADB),
+      );
+      isLoading.value = false;
+    }
+  }
+
+  void signout() async {
+    await _auth.signOut().then((value) => Get.offAllNamed(Routes.login));
+  }
 }
-// FirebaseAuth _auth = FirebaseAuth.instance;
-
-// Rxn<User> _firebaseUser = Rxn<User>();
-
-// String? get user => _firebaseUser.value?.email;
-
-// @override
-// void onInit() {
-//   super.onReady();
-//   _firebaseUser = Rxn<User>(_auth.currentUser);
-//   _firebaseUser.bindStream(_auth.authStateChanges());
-// }
-
-// Future<dynamic> createUser(
-//   String username,
-//   String email,
-//   String mobile,
-//   String password,
-//   String rePassword,
-// ) async {
-//   try {
-//     await _auth.createUserWithEmailAndPassword(
-//         email: email, password: password);
-//
-//     final User user = _auth.currentUser!;
-//     user.getIdToken();
-//     final uid = user.uid;
-//     print(uid);
-//     Map<String, String> data = {
-//       "firebaseId": uid,
-//       "username": username,
-//       "password": password,
-//       "email": email,
-//       "phoneNumber": mobile,
-//     };
-//   } on FirebaseAuthException catch (e) {
-//     String message = e.message.toString();
-//     Get.snackbar(
-//       "Error creating Account",
-//       message,
-//       snackPosition: SnackPosition.BOTTOM,
-//       backgroundColor: Color(0xFFFFB500),
-//     );
-//   }
-//   return userId;
-// }
-
-// void signout() async {
-//   await _auth.signOut().then((value) => Get.offAllNamed(Routes.login));
-// }
 
 // linkEmailGoogle() async {
 //   try {

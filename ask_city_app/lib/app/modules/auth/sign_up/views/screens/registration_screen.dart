@@ -15,7 +15,6 @@ part '../components/header.dart';
 part '../components/input_field.dart';
 
 class SignUpScreen extends GetView<SignUpController> {
-  final _globalKey = GlobalKey<FormState>();
 
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -93,6 +92,7 @@ class SignUpScreen extends GetView<SignUpController> {
                     ),
                     Container(
                       child: TextFormField(
+                        controller: controller.firstName,
                         textInputAction: TextInputAction.next,
                         decoration: ThemeHelper().textInputDecoration(
                             'First Name', 'Enter your first name'),
@@ -104,6 +104,7 @@ class SignUpScreen extends GetView<SignUpController> {
                     ),
                     Container(
                       child: TextFormField(
+                        controller: controller.lastName,
                         textInputAction: TextInputAction.next,
                         decoration: ThemeHelper().textInputDecoration(
                             'Last Name', 'Enter your last name'),
@@ -113,6 +114,7 @@ class SignUpScreen extends GetView<SignUpController> {
                     SizedBox(height: 20.0),
                     Container(
                       child: TextFormField(
+                        controller: controller.email,
                         textInputAction: TextInputAction.next,
                         decoration: ThemeHelper().textInputDecoration(
                             "E-mail address", "Enter your email"),
@@ -131,6 +133,7 @@ class SignUpScreen extends GetView<SignUpController> {
                     SizedBox(height: 20.0),
                     Container(
                       child: TextFormField(
+                        controller: controller.password,
                         obscureText: true,
                         textInputAction: TextInputAction.next,
                         decoration: ThemeHelper().textInputDecoration(
@@ -161,7 +164,11 @@ class SignUpScreen extends GetView<SignUpController> {
                         ),
                       ),
                       onPressed: () {
-                        controller.goToHomeScreen();
+                        controller.createUser(
+                            controller.firstName.text,
+                            controller.lastName.text,
+                            controller.email.text,
+                            controller.password.text);
                       },
                     ),
                   ),
